@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+body {
+  background: linear-gradient(to left, #75a1aa, 70%, #cee7e9);
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  width: auto;
+  height: auto;
+  /* padding: 20px; */
+  box-shadow: 3px 3px 20px rgb(0, 0, 0, 0.5);
+  border-radius: 10px;
+  position: relative;
+}
+.toggle-theme {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  cursor: pointer;
+  color: white;
+  z-index: 1;
+}
+.toggle-theme.active {
+  background-color: #333;
+}
+.toggle-theme.active::before {
+  background-color: white;
+}
+.toggle-theme::before {
+  content: " ";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  z-index: -1;
+}
+
+.display-container {
+  margin: 0 8px;
+  height: 150px;
+  width: auto;
+  max-width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 24px;
+  padding-bottom: 20px;
+  overflow-x: scroll;
+}
+.display-container::-webkit-scrollbar {
+  display: block;
+  height: 3px;
+}
+#display-value {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  margin: 0 10px;
+  width: auto;
+  border: 0;
+  font-size: 24px;
+}
+#display-result {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  margin: 0 10px;
+  width: auto;
+  margin-top: 10px;
+  display: none;
+  opacity: 0;
+}
+/* #display-result {
+  margin: 0 10px;
+  height: 150px;
+  width: auto;
+  max-width: 270px;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  font-size: 24px;
+} */
+
+.buttons {
+  border-radius: 10px;
+  padding: 15px 20px 20px;
+}
+button {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.3);
+  transition: all 200ms ease;
+}
+button:hover {
+  transform: scale(1.05);
+}
+button#equal {
+  width: 110px;
+}
+.btn-operator {
+  background-color: #3d6063;
+  color: white;
+}
+.btn-operator#clear {
+  background-color: #333;
+}
+.btn-operator#delete {
+  color: white;
+}
+/*LIGHT THEME*/
+.calculator {
+  background-color: white;
+}
+.buttons {
+  background-color: #f0efef;
+}
+/* DARK THEME */
+.calculator.dark-theme {
+  background-color: transparent;
+}
+.buttons.dark {
+  background-color: #3d6063;
+}
+
+/* .buttons {
+  background-color: #3d6063;
+} */
